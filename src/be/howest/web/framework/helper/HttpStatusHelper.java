@@ -7,7 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import be.howest.web.framwork.log.Logger;
+import be.howest.web.framework.log.Logger;
 
 /**
  * Helper methods to generate error pages. 

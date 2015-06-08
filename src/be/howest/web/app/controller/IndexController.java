@@ -1,8 +1,8 @@
 package be.howest.web.app.controller;
 
 import be.howest.web.framework.controller.Controller;
-import be.howest.web.framwork.log.LogLevel;
-import be.howest.web.framwork.log.Logger;
+import be.howest.web.framework.log.LogLevel;
+import be.howest.web.framework.log.Logger;
 
 public class IndexController extends Controller {
 	

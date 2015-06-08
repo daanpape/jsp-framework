@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import be.howest.web.framework.helper.HttpStatusHelper;
-import be.howest.web.framwork.log.LogLevel;
-import be.howest.web.framwork.log.Logger;
+import be.howest.web.framework.log.LogLevel;
+import be.howest.web.framework.log.Logger;
 
 /**
  * Servlet implementation class RouterController

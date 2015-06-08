@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 
 import javax.servlet.ServletContext;
 
-import be.howest.web.framwork.log.LogLevel;
-import be.howest.web.framwork.log.Logger;
+import be.howest.web.framework.log.LogLevel;
+import be.howest.web.framework.log.Logger;
 
 public class ConnectionManager {
 

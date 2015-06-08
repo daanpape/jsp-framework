@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import be.howest.web.framework.helper.HttpStatusHelper;
-import be.howest.web.framwork.log.LogLevel;
-import be.howest.web.framwork.log.Logger;
+import be.howest.web.framework.log.LogLevel;
+import be.howest.web.framework.log.Logger;
 
 /**
  * Base class for any framework controller. 
