@@ -28,7 +28,7 @@ public class ConnectionManager {
 		return buff.toString();
 	}
 	
-	public Connection getConnection(ServletContext ctx) {
+	public static Connection getConnection(ServletContext ctx) {
 		String host = ctx.getInitParameter("sqlHost");
 		if(host == null) {
 			host = "localhost";
@@ -60,7 +60,7 @@ public class ConnectionManager {
 			return null;
 		}
 		
-		return this.getConnection(host, port, database, user, pass);
+		return getConnection(host, port, database, user, pass);
 	}
 	
 	/**
@@ -72,7 +72,7 @@ public class ConnectionManager {
 	 * @param pass the password for user authentication.
 	 * @return the connection on success, null on error.
 	 */
-    public Connection getConnection(String host, int port, String db, String user, String pass) {
+    public static Connection getConnection(String host, int port, String db, String user, String pass) {
     	Connection conn = null;
     	String connString = getJdbcConnectionString(host, port, db);
     	

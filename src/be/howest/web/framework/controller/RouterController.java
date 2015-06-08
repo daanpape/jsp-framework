@@ -114,7 +114,7 @@ public class RouterController extends HttpServlet {
 		
 		Controller ctl = ctlRequest.getController();
 		if(ctl != null) {
-			ctl.init(request, response);
+			ctl.init(request, response, this.getServletContext());
 			String view = ctl.handleGet(ctlRequest.getAction(), ctlRequest.getId());
 			if(view == null) {
 				return;
@@ -138,7 +138,7 @@ public class RouterController extends HttpServlet {
 		
 		Controller ctl = ctlRequest.getController();
 		if(ctl != null) {
-			ctl.init(request, response);
+			ctl.init(request, response, this.getServletContext());
 			String view = ctl.handlePost(ctlRequest.getAction(), ctlRequest.getId());
 			if(view == null) {
 				return;
@@ -162,7 +162,7 @@ public class RouterController extends HttpServlet {
 		
 		Controller ctl = ctlRequest.getController();
 		if(ctl != null) {
-			ctl.init(request, response);
+			ctl.init(request, response, this.getServletContext());
 			String view = ctl.handlePut(ctlRequest.getAction(), ctlRequest.getId());
 			if(view == null) {
 				return;
@@ -186,7 +186,7 @@ public class RouterController extends HttpServlet {
 		
 		Controller ctl = ctlRequest.getController();
 		if(ctl != null) {
-			ctl.init(request, response);
+			ctl.init(request, response, this.getServletContext());
 			String view = ctl.handleDelete(ctlRequest.getAction(), ctlRequest.getId());
 			if(view == null) {
 				return;

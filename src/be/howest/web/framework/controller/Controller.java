@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,23 +23,24 @@ import be.howest.web.framework.log.Logger;
  */
 public class Controller {
 	
-	private HttpServletRequest request;
-	private HttpServletResponse response;
-	private HttpSession session;
+	protected HttpServletRequest request;
+	protected HttpServletResponse response;
+	protected HttpSession session;
+	protected ServletContext context;
 	
 	/**
 	 * Initialise the abstract controller instance. 
 	 * @param request the HTTP request. 
 	 * @param response the HTTP response.
 	 */
-	public void init(HttpServletRequest request, HttpServletResponse response) {
+	public void init(HttpServletRequest request, HttpServletResponse response, ServletContext context) {
 		this.request = request;
 		this.response = response;
+		this.context = context;
 		this.session = request.getSession();
 		
 		this.response.setCharacterEncoding("UTF-8");		
 	}
-	
 	
 	private String handleRequest(String type, String action, int id) throws ServletException, IOException {
 		Method method = null;
@@ -53,7 +55,7 @@ public class Controller {
 				return (String) method.invoke(this, id);
 			}
 		} catch (Exception ex) {
-			Logger.log(LogLevel.ERROR_CRITICAL, this.getClass().getSimpleName() + " doesnt have a handler for action: " + action);
+			Logger.log(LogLevel.ERROR_CRITICAL, this.getClass().getSimpleName() + " doesnt have a handler for action: " + action, ex);
 			return null;
 		}
 	}

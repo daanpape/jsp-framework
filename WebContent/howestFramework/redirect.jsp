@@ -2,4 +2,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%-- can't set welcome page to URL so, do a redirect here --%>
-<c:redirect url="/do/index" />
+<c:redirect url="/do/index/index" />
